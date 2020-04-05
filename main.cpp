@@ -17,8 +17,8 @@ void showContributor(Contributor contributor)
 int main() {
     Contribution vklad(0.2, 7, 50000);
     Contributor alexis("Alexis");
+    vklad.calcSumma();
     alexis.initContrib(vklad);
-    calcSumma(vklad);
     showContributor(alexis);
     return 0;
 }

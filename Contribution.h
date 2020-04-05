@@ -28,7 +28,7 @@ public:
     {
         this->term = term;
     }
-    void setSumma(int Summa)
+    void setSumma(int summa)
     {
         this->summa = summa;
     }
@@ -46,26 +46,26 @@ public:
         return summa;
     }
 
-    friend void calcSumma(Contribution& contribution)
+    void calcSumma()
     {
-        if (contribution.getTerm() > 6 && contribution.getTerm() < 12)
+        if (getTerm() > 6 && getTerm() < 12)
         {
             double fat = 0;
-            fat = contribution.getPercent() * contribution.getSumma() * contribution.getTerm() +
-                  contribution.getSumma() + 0.05 * contribution.getSumma();
-            cout << fat;
-            contribution.setSumma(fat);
+            fat = getPercent() * getSumma() * getTerm() +
+                  getSumma() + 0.05 * getSumma();
+            setSumma(fat);
 
-        }else if (contribution.getTerm() > 12)
+        }else if (getTerm() > 12)
         {
             double fat = 0;
-            fat = contribution.getPercent()*contribution.getSumma() * contribution.getTerm() + contribution.getSumma() + 0.1*contribution.getSumma();
-            contribution.setSumma(fat);
+            fat = getPercent()*getSumma() * getTerm() + getSumma() + 0.1*getSumma();
+            setSumma(fat);
         } else {
             double fat = 0;
-            fat = contribution.getPercent()*contribution.getSumma() * contribution.getTerm() + contribution.getSumma();
-            contribution.setSumma(fat);
+            fat = getPercent()*getSumma() * getTerm() + getSumma();
+            setSumma(fat);
         }
     }
 };
+
 
